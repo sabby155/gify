@@ -1,3 +1,5 @@
+
+
 .App {
   margin: 0 auto;
   padding: 0;
@@ -14,13 +16,19 @@ h1, h2, h3, h4, h5 {
 }
 
 img, embed, object, video {
-max-width: 100%
+  max-width: 100%
 }
 
 
 header, nav, footer, section, div {
   box-sizing: border-box;
 }
+
+/* Nav Styles */
+div.ui.pointing.secondary.menu {
+  border:none;
+}
+
 
 ul {
   list-style: none;
@@ -124,7 +132,7 @@ ul {
 #search-form {
   padding: 1%;
   width: 80%;
-  border: 2px solid teal;
+  border: 2px solid #9BDACA;
   border-radius: 25px;
   
 }
@@ -138,8 +146,8 @@ ul {
   text-align: center;
   border: none;
   font-size: 1.2em;
-  color: blue;
-  caret-color: purple;
+  color: #D8A7CD;
+  caret-color: #FFA685;
 }
 
 /* ------ Favorites ----- */

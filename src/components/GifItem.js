@@ -3,6 +3,7 @@ import { Image,  Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import '../App.css'
 import { withRouter } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
@@ -12,10 +13,11 @@ class GifItem extends React.Component {
     state = {
         isClicked: false,
     }
+
+
     
     handleFavorite = (props) => {
         if (this.props.currentUser) {
-            console.log('you may enter a fave! Saving this.')
             this.setState({isClicked: !this.state.isClicked})
             try {
                 this.props.saveGifToFavorites(props); //saves to the database, "key", "value"
@@ -25,10 +27,14 @@ class GifItem extends React.Component {
                 }
             } 
         } else {
+            this.notify()
             this.props.history.push('/sign-in')
         }
     }
 
+    notify = () => {
+        toast('👻 Please enter a username to start favoriting.')
+    }
     
     render() {
         const imageLink = this.props.images.downsized.url

@@ -8,12 +8,11 @@ import { withRouter } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import FavoritesContainer from './components/FavoritesContainer';
 import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-//https://fkhadra.github.io/react-toastify/installation
-toast.configure()
-class App extends React.Component {
+import 'react-toastify/dist/ReactToastify.css' //https://fkhadra.github.io/react-toastify/installation
 
-  
+toast.configure()
+
+class App extends React.Component {
 
   componentDidMount() {
     const user = localStorage.getItem('user')

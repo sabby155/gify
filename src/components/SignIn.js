@@ -23,7 +23,7 @@ class SignIn extends React.Component {
     }
 
     notify = () => {
-        toast('YAY')
+        toast('🌈 That was easy.')
     }
 
 

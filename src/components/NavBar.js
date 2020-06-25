@@ -21,21 +21,21 @@ class NavBar extends React.Component {
     }
 
     render() {
-        // const { activeItem } = this.state
+        const { activeItem } = this.state
         return (
             <nav>
                 <Menu pointing secondary>
                     <Menu.Menu position='right'>
                         <Menu.Item
                             name='home'
-                            // active={activeItem === 'home'}
+                            active={activeItem === 'home'}
                             onClick={this.handleItemClick}
                             to = "/"
                             as = {Link}
                         />
                         <Menu.Item
                             name='favorites'
-                            // active={activeItem === 'favorites'}
+                            active={activeItem === 'favorites'}
                             onClick={this.handleItemClick}
                             to = "/favorites"
                             as = {Link}
@@ -43,13 +43,13 @@ class NavBar extends React.Component {
                         {this.props.currentUser ? 
                             <Menu.Item
                                 name='sign-out'
-                                // active={activeItem === 'signout'}
+                                active={activeItem === 'sign-out'}
                                 onClick={this.handleSignOut}
                             />
                             :
                             <Menu.Item
                                 name='sign-in'
-                                // active={activeItem === 'signin'}
+                                active={activeItem === 'sign-in'}
                                 onClick={this.handleItemClick}
                                 to = "/sign-in"
                                 as = {Link}
