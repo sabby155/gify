@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
     handleClick = () => {
 
         const term = this.props.term;
-        const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw&q=${term}&limit=30&offset=0&rating=G&lang=en`;
+        const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw&q=${term}&limit=20&offset=0&rating=G&lang=en`;
 
         fetch(giphyApiUrl, {
             method: 'GET',
