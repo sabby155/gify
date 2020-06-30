@@ -61,7 +61,15 @@ ul {
   padding: 1%;
 }
 
-#favorite {
+.gif-content:hover {
+  position:absolute;
+  opacity: .9;
+  border: 2px solid purple;
+  /* transform: scale(1.1) skewX(10deg) skewY(-10deg);
+  transition: .1s ease-in-out; */
+}
+
+#btn-unpressed-icon {
   position: absolute;
   left: 7%;
   bottom: 10%;
@@ -69,11 +77,60 @@ ul {
   mix-blend-mode: hard-light;
   -webkit-animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
+  cursor: pointer;
 }
 
-#btn-pressed {
+#icon-div:hover {
+  position: absolute;
+  left: 7%;
+  bottom: 10%;
+  /* padding: 10px; */
+  mix-blend-mode: hard-light;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+  cursor: pointer;
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+ 
+
+
+#btn-pressed-icon {
   display:none;
 }
+
 
  /* animation fade-in */
 @-webkit-keyframes fade-in {
@@ -125,30 +182,35 @@ ul {
   justify-content: center; 
 }
 
-#search-container h2 {
-  padding: 2%;
-}
 
 #search-form {
-  padding: 1%;
-  width: 80%;
+  padding: 1.5%;
+  /* width: 80%; */
   border: 2px solid #9BDACA;
-  border-radius: 25px;
-  
+  border-radius: 35px;
 }
 
-.ui.form .field .ui.input input,
-.ui.form .fields .field .ui.input input {
-  font-size: 1.3em;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: .5%;
+
+#search-bar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",;
+  /* text-transform: uppercase; */
+  padding: 1.5%;
+  width: 100%;
   text-align: center;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #D8A7CD;
   caret-color: #FFA685;
 }
+
+.search.circular.link.icon {
+  color: teal;
+}
+
+
+
+
 
 /* ------ Favorites ----- */
 

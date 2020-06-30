@@ -1,19 +1,24 @@
 import React from 'react';
-import { Form, Input } from 'semantic-ui-react';
+import { Form, Input, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import '../App.css'
 
 
 class SearchBar extends React.Component {
-    state = {
-        searchTerm: '',
-    }
+    // state = {
+    //     searchTerm: '',
+    // }
 
 
     handleChange = (term) => {
         this.props.setTermChange(term)
-        // console.log('searchterm', term)
-        const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw&q=${term}&limit=20&offset=0&rating=G&lang=en`;
+    }
+
+    handleClick = () => {
+
+        const term = this.props.term;
+        const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw&q=${term}&limit=30&offset=0&rating=G&lang=en`;
+
         fetch(giphyApiUrl, {
             method: 'GET',
             header: {
@@ -31,22 +36,22 @@ class SearchBar extends React.Component {
             console.log(error);
             console.log('Giphy API Error');
         });
-
-        
-
     }
 
     render() {
         // console.log('from search', this.state.searchTerm)
         return(
             <div id="search-container">
-                <h2>Search Giphy</h2>
                 <div id="search-form">
                     <Form>
                         <Form.Field>
-                        <Input
+                        <Input 
+                        size='small'
+                        icon={{ name: 'check', circular: true, link: true, onClick: () => this.handleClick() }}
                         id="search-bar"
-                        onChange={(e) => this.handleChange(e.target.value)}/>
+                        placeholder='Search'
+                        onChange={(e) => this.handleChange(e.target.value)}/
+                        >
                         </Form.Field>
                     </Form>    
                 </div>
@@ -56,7 +61,7 @@ class SearchBar extends React.Component {
 }
 
 function mapStateToProps(state) {
-    // console.log('state from searchbar',state)
+    console.log('state from searchbar',state)
     return {
         currentUser: state.currentUser,
         gifs: state.gifs,

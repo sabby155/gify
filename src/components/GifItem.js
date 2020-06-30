@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 class GifItem extends React.Component {
 
     state = {
-        isClicked: false,
+        isClicked: false, 
     }
 
 
@@ -32,29 +32,36 @@ class GifItem extends React.Component {
         }
     }
 
+
+
     notify = () => {
-        toast('👻 Please enter a username to start favoriting.')
+        toast('👻 Hi stanger! Please enter a username.')
     }
+
+
     
     render() {
         const imageLink = this.props.images.downsized.url
-        let id = this.state.isClicked ? 'btn-pressed' : 'favorite'
+        let id = this.state.isClicked ? 'btn-pressed-icon' : 'btn-unpressed-icon'
+
         return(
-            <div id="gif-container">
+            <div id='gif-container'>
                 <div className="gif-content">
                     <Image 
                         className="gif-image"
                         src={imageLink} 
                         alt={this.props.title}>
                     </Image>
-                        {this.props.isFave ? null : 
-                        <Icon circular inverted
-                            id={id}
-                            name="favorite"
-                            color="teal"
-                            onClick={() => this.handleFavorite(this.props)}
-                        />
-                        }  
+                    { this.props.isInFave ? null : 
+                        <div id="icon-div">
+                            <Icon circular inverted
+                                id={id}
+                                name="heart"
+                                color="teal"
+                                onClick={() => this.handleFavorite(this.props)}
+                            />
+                        </div>
+                        }
                 </div>
             </div>
         )
@@ -65,7 +72,7 @@ class GifItem extends React.Component {
 function mapStateToProps(state) {
     return {
         currentUser: state.currentUser,
-        favorites: state.favorites
+        favorites: state.favorites,
     }
 }
 
@@ -82,7 +89,7 @@ function mapDispatchToProps(dispatch) {
                 type: "REMOVE_GIF_FROM_FAVORITES",
                 payload: id
             })
-        }
+        },
     }
 }
 

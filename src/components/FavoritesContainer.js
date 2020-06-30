@@ -15,7 +15,7 @@ class FavoritesContainer extends React.Component {
         if (this.props.favorites) {
             const faveGifs = this.props.favorites;
             return faveGifs.map((gif) => {
-                return <GifItem {...gif} key={gif.id} isFave={this.state.isFave}/>
+                return <GifItem {...gif} key={gif.id} isInFave={true}/>
             })
         }
     }
@@ -40,6 +40,8 @@ class FavoritesContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
+    console.log('checking state props from favroites container', state)
+
     return {
         currentUser: state.currentUser,
         favorites: state.favorites

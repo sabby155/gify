@@ -6,8 +6,9 @@ import { withRouter } from 'react-router-dom';
 
 
 class NavBar extends React.Component {
+    
     state = { 
-        activeItem: 'home' 
+        activeItem: ''
     }
 
     handleItemClick = (e, { name }) => {
@@ -20,8 +21,29 @@ class NavBar extends React.Component {
         this.props.history.push('/')
     }
 
+
+    // const document.location.pathname to identify the URL and activate navbar
+
+    componentDidMount() {
+        const location = document.location.pathname
+
+        if( location === '/') {
+            this.setState({ activeItem: 'home'})
+        }
+        else if(location === '/favorites') {
+            this.setState({ activeItem: 'favorites'})
+        }
+        else if(location === '/sign-in'){
+            this.setState({ activeItem: 'sign-in'})
+        }
+    }
+    
+
+
+
     render() {
         const { activeItem } = this.state
+
         return (
             <nav>
                 <Menu pointing secondary>
@@ -30,15 +52,15 @@ class NavBar extends React.Component {
                             name='home'
                             active={activeItem === 'home'}
                             onClick={this.handleItemClick}
-                            to = "/"
-                            as = {Link}
+                            to= "/"
+                            as= {Link}
                         />
                         <Menu.Item
                             name='favorites'
                             active={activeItem === 'favorites'}
                             onClick={this.handleItemClick}
-                            to = "/favorites"
-                            as = {Link}
+                            to= "/favorites"
+                            as= {Link}
                         />
                         {this.props.currentUser ? 
                             <Menu.Item
@@ -51,8 +73,8 @@ class NavBar extends React.Component {
                                 name='sign-in'
                                 active={activeItem === 'sign-in'}
                                 onClick={this.handleItemClick}
-                                to = "/sign-in"
-                                as = {Link}
+                                to= "/sign-in"
+                                as= {Link}
                             />
                         }
                 </Menu.Menu>

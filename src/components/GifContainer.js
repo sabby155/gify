@@ -10,9 +10,16 @@ class GifContainer extends React.Component {
     renderGifs = () => {
         if (this.props.gifs) {
             return this.props.gifs.map(gif => {
-                return (
-                    <GifItem {...gif} key={gif.id}/>
-                )
+                let found = this.props.favorites.find(faveGif => faveGif.id === gif.id)
+                 if(found) {
+                     return (
+                    <GifItem {...gif} key={gif.id} isInFave={true}/>
+                    )
+                } else {
+                    return (
+                        <GifItem {...gif} key={gif.id} isInFave={false}/>
+                    )
+                }   
             })
         }
         
@@ -42,10 +49,21 @@ class GifContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        gifs: state.gifs
+        gifs: state.gifs,
+        favorites: state.favorites
     }
 }
 
-export default connect(mapStateToProps)(GifContainer)
-// export const ConnectedGifContainer = connect(mapStateToProps)(GifContainer)
-// export const SizeAwareComponent = sizeMe()(GifContainer)
+function mapDispatchToProps(dispatch) {
+    return {
+        checkIfIsFavorite: (id) => {
+            return dispatch({
+                type: "CHECK_IF_IN_FAVE",
+                payload: id
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(GifContainer)
+
