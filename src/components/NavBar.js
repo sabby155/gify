@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     handleSignOut = () => {
         localStorage.clear()
         this.props.removeUserData()
-        this.props.history.push('/')
+        // this.props.history.push('/sign-in')
     }
 
 
@@ -35,6 +35,9 @@ class NavBar extends React.Component {
         }
         else if(location === '/sign-in'){
             this.setState({ activeItem: 'sign-in'})
+        }
+        else if(location === '/sign-out'){
+            this.setState({ activeItem: 'sign-out'})
         }
     }
     

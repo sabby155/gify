@@ -11,13 +11,14 @@ class GifContainer extends React.Component {
         if (this.props.gifs) {
             return this.props.gifs.map(gif => {
                 let found = this.props.favorites.find(faveGif => faveGif.id === gif.id)
+                let copiedGif = this.props.copiedGif
                  if(found) {
                      return (
-                    <GifItem {...gif} key={gif.id} isInFave={true}/>
+                    <GifItem {...gif} key={gif.id} isInFave={true} copiedGif={copiedGif}/>
                     )
                 } else {
                     return (
-                        <GifItem {...gif} key={gif.id} isInFave={false}/>
+                        <GifItem {...gif} key={gif.id} isInFave={false} copiedGif={copiedGif}/>
                     )
                 }   
             })
@@ -48,20 +49,22 @@ class GifContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
+    // console.log('test from gif container to see if state copied gif', state)
     return {
         gifs: state.gifs,
-        favorites: state.favorites
+        favorites: state.favorites,
+        copiedGif: state.copiedGif
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        checkIfIsFavorite: (id) => {
-            return dispatch({
-                type: "CHECK_IF_IN_FAVE",
-                payload: id
-            })
-        }
+        // checkIfIsFavorite: (id) => {
+        //     return dispatch({
+        //         type: "CHECK_IF_IN_FAVE",
+        //         payload: id
+        //     })
+        // }
     }
 }
 

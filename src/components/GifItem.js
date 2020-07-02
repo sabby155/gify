@@ -11,14 +11,15 @@ import { toast } from 'react-toastify';
 class GifItem extends React.Component {
 
     state = {
-        isClicked: false, 
+        heartIsClicked: false, 
+        linkCopyIsClicked: false,
     }
 
 
     
     handleFavorite = (props) => {
         if (this.props.currentUser) {
-            this.setState({isClicked: !this.state.isClicked})
+            this.setState({heartIsClicked: !this.state.heartIsClicked})
             try {
                 this.props.saveGifToFavorites(props); //saves to the database, "key", "value"
             } catch (error) {
@@ -32,6 +33,23 @@ class GifItem extends React.Component {
         }
     }
 
+    handleCopyLink = (props) => {
+        console.log('this is props from copied',props)
+        if(this.props.currentUser) {
+            this.setState({linkCopyIsClicked: !this.state.linkCopyIsClicked})
+            try {
+                this.props.setCopiedLinkGif(props); //goes through state to send gif info up to gif container lever to see anim.
+                navigator.clipboard.writeText(props.bitly_gif_url) // copies to clipboard
+            } catch (error) {
+                if (error) {
+                    console.log('issue in state when trying to identify gif & send data')
+                }
+            }
+        } else {
+            this.notify()
+            this.props.history.push('/sign-in')
+        }
+    }
 
 
     notify = () => {
@@ -41,9 +59,9 @@ class GifItem extends React.Component {
 
     
     render() {
+        console.log('console.logging for copied gif?',this.props)
         const imageLink = this.props.images.downsized.url
-        let id = this.state.isClicked ? 'btn-pressed-icon' : 'btn-unpressed-icon'
-
+        let heartID = this.state.heartIsClicked ? 'heart-btn-pressed-icon' : 'heart-btn-unpressed-icon'
         return(
             <div id='gif-container'>
                 <div className="gif-content">
@@ -53,15 +71,35 @@ class GifItem extends React.Component {
                         alt={this.props.title}>
                     </Image>
                     { this.props.isInFave ? null : 
-                        <div id="icon-div">
+                        <div id="heart-icon-div">
                             <Icon circular inverted
-                                id={id}
+                                size="small"
+                                id={heartID}
                                 name="heart"
-                                color="teal"
+                                color="purple"
                                 onClick={() => this.handleFavorite(this.props)}
                             />
                         </div>
-                        }
+                     }
+                        <div id="link-icon-div">
+                            <Icon circular inverted
+                                size="small"
+                                id="link-icon"
+                                name="linkify"
+                                color="blue"
+                                onClick={() => this.handleCopyLink(this.props)}
+                            />
+                        </div>
+                        { this.props.copiedGif.id === this.props.id ? 
+                        (<div id="copied-text-effect">
+                            <span>c</span>
+                            <span>o</span>
+                            <span>p</span>
+                            <span>i</span>
+                            <span>e</span>
+                            <span>d</span>
+                            <span>!</span>
+                        </div>) : null}
                 </div>
             </div>
         )
@@ -87,6 +125,12 @@ function mapDispatchToProps(dispatch) {
         removeGifFromFavorites: (id) => {
             return dispatch({
                 type: "REMOVE_GIF_FROM_FAVORITES",
+                payload: id
+            })
+        },
+        setCopiedLinkGif: (id) => {
+            return dispatch({
+                type: "SET_COPIED_LINK_GIF",
                 payload: id
             })
         },

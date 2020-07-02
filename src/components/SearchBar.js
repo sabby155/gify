@@ -5,9 +5,7 @@ import '../App.css'
 
 
 class SearchBar extends React.Component {
-    // state = {
-    //     searchTerm: '',
-    // }
+
 
 
     handleChange = (term) => {
@@ -49,7 +47,7 @@ class SearchBar extends React.Component {
                         size='small'
                         icon={{ name: 'check', circular: true, link: true, onClick: () => this.handleClick() }}
                         id="search-bar"
-                        placeholder='Search'
+                        // placeholder='Search'
                         onChange={(e) => this.handleChange(e.target.value)}/
                         >
                         </Form.Field>
