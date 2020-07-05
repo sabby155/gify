@@ -26,12 +26,18 @@ class App extends React.Component {
   }
 
   render() {
-    
+    const headerID = this.props.searchBarClicked ? 'header-move' : 'header-idle';
       return (
       <div className="App">
         <header className="header-wrapper">
-          <div className="header-text">
-            <h1>Gify.</h1> 
+          <div>
+            <h1 id={headerID}>
+                <span className="g">G</span>
+                <span className="i">i</span>
+                <span className="f">f</span>
+                <span className="y">y</span>
+                <span className="end">.</span>
+            </h1> 
           </div>
         </header>
         <NavBar />
@@ -52,9 +58,11 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
+      console.log('state from app',state)
   return {
     currentUser: state.currentUser,
     favorites: state.favorites,
+    searchBarClicked: state.searchBarClicked,
   }
 }
 

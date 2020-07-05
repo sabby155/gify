@@ -3,7 +3,8 @@ const defaultState = {
     term: '',
     gifs: [],
     favorites: [],
-    copiedGif: []
+    copiedGif: [],
+    searchBarClicked: false,
 }
 
 const reducer = (state=defaultState, action) => {
@@ -22,6 +23,9 @@ const reducer = (state=defaultState, action) => {
 
         case "SET_COPIED_LINK_GIF": 
             return {... state, copiedGif: action.payload}
+
+        case "SET_SEARCHBAR_CLICK": 
+            return {... state, searchBarClicked: action.payload}
 
         case "SAVE_GIF_TO_FAVORITES": 
             let duplicateFound = [...state.favorites].find(gif => gif.id === action.payload.id)

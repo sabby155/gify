@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 class GifItem extends React.Component {
 
     state = {
-        heartIsClicked: false, 
+        heartIsClicked: false,
         linkCopyIsClicked: false,
     }
 
@@ -24,17 +24,25 @@ class GifItem extends React.Component {
                 this.props.saveGifToFavorites(props); //saves to the database, "key", "value"
             } catch (error) {
                 if (error) {
-                    alert("Sorry, you've exceeded your quota."); //data wasn't successfully saved due to setItem quota exceed so throw an error
+                    this.notifyDataExceeded() //data wasn't successfully saved due to setItem quota exceed so throw an error
                 }
             } 
         } else {
-            this.notify()
+            this.notifyEnterUsername()
             this.props.history.push('/sign-in')
         }
     }
 
+
+    handleUnlike = () => {
+        if (this.props.currentUser) {
+            this.setState({heartIsClicked : !this.state.heartIsClicked})
+        }
+    }
+
+
     handleCopyLink = (props) => {
-        console.log('this is props from copied',props)
+        // console.log('this is props from copied',props)
         if(this.props.currentUser) {
             this.setState({linkCopyIsClicked: !this.state.linkCopyIsClicked})
             try {
@@ -46,20 +54,25 @@ class GifItem extends React.Component {
                 }
             }
         } else {
-            this.notify()
+            this.notifyEnterUsername()
             this.props.history.push('/sign-in')
         }
     }
 
 
-    notify = () => {
+    notifyEnterUsername = () => {
         toast('👻 Hi stanger! Please enter a username.')
+    }
+
+    notifyDataExceeded = () => {
+        toast("❌ Oh no! You've exceeded your gif quota. Sorry!")
     }
 
 
     
     render() {
-        console.log('console.logging for copied gif?',this.props)
+        // console.log('console.logging props from gif',this.props)
+        // console.log('console.logging state from gif',this.state)
         const imageLink = this.props.images.downsized.url
         let heartID = this.state.heartIsClicked ? 'heart-btn-pressed-icon' : 'heart-btn-unpressed-icon'
         return(
@@ -70,8 +83,17 @@ class GifItem extends React.Component {
                         src={imageLink} 
                         alt={this.props.title}>
                     </Image>
-                    { this.props.isInFave ? null : 
-                        <div id="heart-icon-div">
+                    { this.props.isInFave ? 
+                        (<div id="un-heart-icon-div">
+                            <Icon circular inverted
+                                size="small"
+                                id={heartID}
+                                name="minus circle"
+                                color="purple"
+                                onClick={() => this.handleUnlike(this.props)}
+                            />
+                        </div>) : 
+                        (<div id="heart-icon-div">
                             <Icon circular inverted
                                 size="small"
                                 id={heartID}
@@ -79,7 +101,7 @@ class GifItem extends React.Component {
                                 color="purple"
                                 onClick={() => this.handleFavorite(this.props)}
                             />
-                        </div>
+                        </div>)
                      }
                         <div id="link-icon-div">
                             <Icon circular inverted

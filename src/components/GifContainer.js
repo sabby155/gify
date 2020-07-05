@@ -31,7 +31,7 @@ class GifContainer extends React.Component {
             <div>
                 <div className="stack-grid">
                     <StackGrid 
-                        columnWidth={225} 
+                        columnWidth={300} 
                         monitorImagesLoaded={true}
                         appear={helix.appear}
                         appeared={helix.appeared}
