@@ -58,7 +58,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-      console.log('state from app',state)
+      // console.log('state from app',state)
   return {
     currentUser: state.currentUser,
     favorites: state.favorites,

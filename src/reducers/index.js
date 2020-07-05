@@ -39,6 +39,13 @@ const reducer = (state=defaultState, action) => {
                 return {...state, favorites: storedGifs} 
             }
         
+        case "REMOVE_GIF_FROM_FAVORITES": 
+            let filteredFaves = [...state.favorites].filter((gif) => gif.id !== action.payload)
+            localStorage.setItem('storedGifs', JSON.stringify(filteredFaves))
+
+            const storedGifs = JSON.parse(localStorage.getItem('storedGifs'))
+            return {...state, favorites: storedGifs} 
+        
         case "REMOVE_USER_DATA": 
             return {...state, currentUser: null, term: '', gifs: [], favorites: []} 
         

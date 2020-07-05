@@ -34,9 +34,18 @@ class GifItem extends React.Component {
     }
 
 
-    handleUnlike = () => {
+    handleUnlike = (props) => {
         if (this.props.currentUser) {
             this.setState({heartIsClicked : !this.state.heartIsClicked})
+            try {
+                this.props.removeGifFromFavorites(props.id);
+            } catch (error){
+                if (error) {
+                    console.log('something went wrong from state')
+                }
+            }
+        } else {
+            console.log('something went wrong')
         }
     }
 
@@ -150,12 +159,12 @@ function mapDispatchToProps(dispatch) {
                 payload: id
             })
         },
-        setCopiedLinkGif: (id) => {
+        setCopiedLinkGif: (data) => {
             return dispatch({
                 type: "SET_COPIED_LINK_GIF",
-                payload: id
+                payload: data
             })
-        },
+        }
     }
 }
 
