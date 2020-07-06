@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import GifItem from './GifItem'
+import { Icon } from 'semantic-ui-react'
 import StackGrid, { transitions } from "react-stack-grid";
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button"; //https://www.npmjs.com/package/react-scroll-up-button
 
 const { helix } = transitions;
 
@@ -41,6 +43,20 @@ class GifContainer extends React.Component {
                         >
                         {this.renderGifs()}
                     </StackGrid>
+                    <ScrollUpButton 
+                        ContainerClassName="scroll-up-btn"
+                        style={{
+                        width: 30,
+                        padding: 5,
+                        outline: 'none',
+                        border: 'none',
+                        height: 30,
+                        zIndex: 1000,
+                        borderRadius: '50%',
+                        backgroundColor: '#f2cee6',
+                        boxShadow: '-2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff',
+                        }}
+                    ></ScrollUpButton>
                 </div> 
             </div>
         )

@@ -112,14 +112,13 @@ ul {
   align-items: flex-end;
   padding: 1%;
   opacity: .9;
-  box-shadow: 0 0 02px#2dc7ff;
 }
 
-/* .gif-content:hover {
+.gif-content:hover {
   position:absolute;
   opacity: 1;
-  border: 1px solid #9BDACA;
-} */
+  box-shadow: 0 0 02px#2dc7ff;
+}
 
 /* .gif-image {
   border: 0 0 0 5px solid purple; 
@@ -330,7 +329,7 @@ ul {
 #search-form {
   padding: 1.5%;
   /* width: 80%; */
-  border: 2px solid #2dc7ff;
+  border: 2px solid black;
   border-radius: 35px;
 }
 
@@ -366,8 +365,6 @@ ul {
 
 
 
-
-
 /* ------ Favorites ----- */
 
 .favorites-wrapper {
@@ -377,6 +374,7 @@ ul {
 .favorites-wrapper h2 {
   margin-bottom: 2%;
 }
+
 
 
 
