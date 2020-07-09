@@ -52,6 +52,13 @@ class SearchBar extends React.Component {
         // console.log('from search', this.state.searchTerm)
         return(
             <div id="search-container">
+                <h2 id="search-header">Search Giphy</h2>
+                <div id="chat-image"></div>
+                <ul id="blah-text">
+                    <li>blah</li>
+                    <li>blah</li>
+                    <li>blah</li>
+                </ul>
                 <div id="search-form">
                     <Form>
                         <Form.Field>

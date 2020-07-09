@@ -31,7 +31,7 @@ class GifContainer extends React.Component {
     render() {
         return(
             <div>
-                <div className="stack-grid">
+                <div id="gif-container-wrapper">
                     <StackGrid 
                         columnWidth={300} 
                         monitorImagesLoaded={true}
@@ -65,7 +65,7 @@ class GifContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-    // console.log('test from gif container to see if state copied gif', state)
+    console.log('test from gif container to see if state copied gif', state)
     return {
         gifs: state.gifs,
         favorites: state.favorites,

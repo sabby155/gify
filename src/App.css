@@ -9,12 +9,34 @@
   padding: 0;
 }
 
+/* Whiskey Bite Font Family Styles */
+
+@font-face {
+  font-family: 'whiskey-bite-duo';
+  src:  url('./fonts/woff2/WhiskeyBitev2-Duo.woff2') format('woff2'),
+        url('./fonts/woff/WhiskeyBitev2-Duo.woff') format('woff');     
+}
+
+@font-face {
+  font-family: 'whiskey-bite-outline';
+  src:  url('./fonts/woff2/WhiskeyBitev2-Outline.woff2') format('woff2'),
+        url('./fonts/woff/WhiskeyBitev2-Outline.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'whiskey-bite-regular';
+  src:  url('./fonts/woff2/WhiskeyBitev2-Regular.woff2') format('woff2'),
+        url('./fonts/woff/WhiskeyBitev2-Regular.woff') format('woff');
+}
+
+
 h1, h2, h3, h4, h5 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   margin: 0;
   text-align: center;
+  z-index: 1000;
 }
 
 img, embed, object, video {
@@ -57,11 +79,173 @@ ul {
   font-size: 10vmax;
 
 }
+#coffee{
+  background-color: #2dc7ff;
+  position: absolute; 
+  background: url('./assets/coffee.png');
+  width: 141px;
+  height: 197px;
+  transform: scale(.3);
+  left: 12%;
+  top: 18%;
+}
+
+#bulb{
+  position: absolute; 
+  background: url('./assets/bulb.png');
+  width: 170px;
+  height: 215px;
+  transform: scale(.35) rotate(-30deg);
+  left: 80%;
+  top: 17%;
+}
+
+#hand {
+  position: absolute; 
+  background: url('./assets/hand.png');
+  width: 150px;
+  height: 159px;
+  transform: scale(.3);
+  left: 7%;
+  top: 4%;
+}
+
+#thumbsup {
+  position: absolute; 
+  background: url('./assets/thumbsup.png');
+  width: 261px;
+  height: 291px;
+  transform: scale(.25);
+  left: 50%;
+  top: -7%;
+}
+
+#robot {
+  position: absolute; 
+  background: url('./assets/robot.png');
+  width: 184px;
+  height: 278px;
+  transform: scale(.28) rotate(10deg);
+  left: 38%;
+  top: -10%;
+}
+
+
+#music{
+  position: absolute; 
+  background: url('./assets/music.png');
+  width: 75px;
+  height: 88px;
+  transform: scale(.5);
+  left: 20%;
+  top: -1%;
+}
+
+#squigley{
+  position: absolute; 
+  background: url('./assets/squigley.png');
+  width: 159px;
+  height: 157px;
+  transform: scale(.3) rotate(115deg);
+  left: 57%;
+  top: 23%;
+}
+
+#waves{
+  position: absolute; 
+  background: url('./assets/waves.png');
+  width: 203px;
+  height: 148px;
+  transform: scale(.45);
+  left: 70%;
+  top: -4%;
+}
+
+
+#cat{
+  position: absolute; 
+  background: url('./assets/cat.png');
+  width: 113px;
+  height: 155px;
+  transform: scale(.35);
+  left: 1%;
+  top: -3%;
+}
+
+#paintbrush {
+  position: absolute; 
+  background: url('./assets/paintbrush.png');
+  width: 290px;
+  height: 173px;
+  transform: scale(.3) rotate(80deg);
+  left: 78%;
+  top: 0%;
+}
+
+#mouse{
+  position: absolute; 
+  background: url('./assets/mouse.png');
+  width: 124px;
+  height: 264px;
+  transform: scale(.38);
+  left: 35%;
+  top: 16%;
+}
+
+#sunglass{
+  position: absolute; 
+  background: url('./assets/sunglass.png');
+  width: 207px;
+  height: 143px;
+  transform: scale(.3);
+  left: 75%;
+  top: 7%;
+}
+
+
+#hearts{
+  position: absolute; 
+  background: url('./assets/hearts.png');
+  width: 122px;
+  height: 175px;
+  transform: scale(.45);
+  left: 22%;
+  top: 9%;
+}
+
+#rain{
+  position: absolute; 
+  background: url('./assets/rain.png');
+  width: 166px;
+  height: 306px;
+  transform: scale(.35) rotate(-15deg);
+  left: 62%;
+  top: 0%;
+}
+
+#quotes{
+  position: absolute; 
+  background: url('./assets/quotes.png');
+  width: 131px;
+  height: 125px;
+  transform: scale(.45);
+  left: 29%;
+  top: 5%;
+}
+
+#lightning{
+  position: absolute; 
+  background: url('./assets/lightning.png');
+  width: 158px;
+  height: 204px;
+  transform: scale(.35) rotate(-60deg);
+  left: 0%;
+  top: 16%;
+}
 
 #header-move {
   font-size: 10vmax;
 }
-
 
 #header-move span {
   position: relative;
@@ -102,72 +286,238 @@ ul {
   }
 }
 
+/* --- Gif Information Container Styles ----*/
+#gif-info-container {
+  margin: 50px 0;
+}
+
+#gif-info-blurb {
+  padding: 5%;
+}
+
+blockquote {
+  border-left: 6px solid #2dc7ff;
+  background: #f9f9f9;
+  display: inline-block;
+  font-family: 'whiskey-bite-duo';
+  width: 50%;
+  font-size: .55em;
+  margin: 2.5em 2%;
+  padding: 3em 2em;
+  quotes: "\201C""\201D""\2018""\2019";
+  
+}
+
+blockquote:before {
+  color: #2dc7ff;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+
+#birthday-box {
+  position: absolute;
+  width: 320px;
+  height: 90px;
+  background-color: rgb(183,232,253);
+  top: 45%;
+  left: 15%;
+}
+
+
+
+#phone {
+  position: absolute;
+  background: url('./assets/phone.png');
+  width: 90px;
+  height: 118px;
+  transform: scale(2) rotate(-10deg);
+  top: 60%;
+  left: 70%;
+
+}
+
 
 
 
 /* --- Gif Item Styles ----*/
 
-.gif-content {
+ .gif-content {
   display: flex;
   align-items: flex-end;
   padding: 1%;
-  opacity: .9;
-}
+} 
 
-.gif-content:hover {
+/* .gif-content:hover {
   position:absolute;
-  opacity: 1;
-  box-shadow: 0 0 02px#2dc7ff;
-}
-
-/* .gif-image {
-  border: 0 0 0 5px solid purple; 
-  z-index: 5
+  width: 100%;
 } */
 
+
+
+.gif-image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.content {
+  width: 18em;
+  max-width: 80%;
+}
+
+.logo {
+  margin: 0 0 1em;
+  width: 10.625em;
+  transition: all .35s ease;
+}
+
+
+
+
 #heart-btn-pressed-icon {
+  background: linear-gradient(45deg,hotpink, #f2cee6);
   position: absolute;
   left: 7%;
-  bottom: 10%;
+  bottom: 7%;
   padding: 10px;
-  mix-blend-mode: hard-light;
   -webkit-animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   cursor: pointer;
+  border: 1px solid black;
+
 }
 
 #heart-btn-unpressed-icon {
+  background: linear-gradient(45deg,#f2cee6, hotpink);
   position: absolute;
   left: 7%;
-  bottom: 10%;
+  bottom: 7%;
   padding: 10px;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: ard-light;
   -webkit-animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   cursor: pointer;
+  border: 1px solid black;
 }
 
-#heart-icon-div:hover {
+#heart-icon-div {
+  opacity: 0;
+}
+
+#un-heart-icon-div {
+  opacity: 0;
+}
+
+.gif-content:hover #heart-icon-div{
+  opacity: 1;
   position: absolute;
   left: 7%;
-  bottom: 10%;
-  /* padding: 10px; */
-  mix-blend-mode: hard-light;
+  bottom: 7%;
   animation: heartbeat 1.5s ease-in-out infinite both;
   cursor: pointer;
 }
 
 
+.gif-content:hover #un-heart-icon-div{
+  opacity: 1;
+  position: absolute;
+  left: 7%;
+  bottom: 7%;
+  cursor: pointer;
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+
 #link-icon {
   position: absolute;
+  background: linear-gradient(45deg,lightblue, #2dc7ff);
   left: 20%;
-  bottom: 10%;
+  bottom: 7%;
   padding: 10px;
-  mix-blend-mode: hard-light;
   -webkit-animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   cursor: pointer;
+  border: 1px solid black;
+
 }
+
+#link-icon-div {
+  opacity: 0;
+}
+
+.gif-content:hover #link-icon-div {
+  position: absolute;
+  left: 20%;
+  bottom: 7%;
+  opacity: 1;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  90% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+}
+
 
 #copied-text-effect {
   position: absolute;
@@ -236,46 +586,6 @@ ul {
   }
 }
 
-
-@keyframes heartbeat {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  10% {
-    -webkit-transform: scale(0.91);
-            transform: scale(0.91);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  17% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  33% {
-    -webkit-transform: scale(0.87);
-            transform: scale(0.87);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  45% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
- 
-
-
-
- /* animation fade-in */
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -312,10 +622,16 @@ ul {
 }
 
 
-/* ------ Search Bar ------ */
+/* ------ Search Styles ------ */
 
  #search-container {
-  width: 100%;
+  /* width: 100%; */
+  background: url('./assets/main-hero-image.png') no-repeat center top;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15vh;
+
   padding: 10%;
   margin: 0 auto;
   display: flex;
@@ -325,13 +641,43 @@ ul {
   justify-content: center; 
 }
 
+#chat-image {
+  position: absolute; 
+  background: url('./assets/chat-image.png');
+  width: 247px;
+  height: 117px;
+  left: 25%;
+  bottom: -8%;
+  opacity: .5;
+}
+
+#search-header {
+  position: absolute;
+  font-family: 'whiskey-bite-regular';
+  font-size: 1.2em;
+  bottom: 6%;
+}
+
 
 #search-form {
-  padding: 1.5%;
+  /* position: relative; */
+  padding: 2%;
   /* width: 80%; */
   border: 2px solid black;
   border-radius: 35px;
+  background-color: white;
+  z-index: 100;
+  
 }
+
+#blah-text {
+  font-family: 'whiskey-bite-duo';
+  font-size: .8em;
+  position: absolute;
+  right: 25%;
+}
+
+
 
 
 #search-bar {
@@ -345,6 +691,8 @@ ul {
   font-size: 1.5em;
   color: #D8A7CD;
   caret-color: #FFA685;
+  background-color: white;
+  z-index: 100;
 }
 
 
@@ -352,16 +700,16 @@ ul {
 .check.circular.link.icon {
   background-color: #f2cee6;
   box-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff;
+  z-index: 100;
 }
 
 .check.circular.link.icon:active {
   background-color: #f2cee6;
   transform: translateY(3px);
   box-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 0 0 #2dc7ff;
-  /* transition: all .5s ease-in-out; */
+  z-index: 100;
+
 }
-
-
 
 
 
@@ -377,20 +725,87 @@ ul {
 
 
 
+/* ------ Gif Container Styles ----- */
+
+#gif-container-wrapper {
+  margin-top: 50px;
+}
 
 
-/* @media only screen and (max-width: 1000px) {
+
+
+
+
+
+
+/* Large screens ----------- */
+@media only screen  and (max-width : 2000px) {
+  /* Styles */
+  .header-wrapper {
+    background: url('./assets/main-hero-image.png') no-repeat center top;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  }
+  
+  
+ @media only screen and (max-width: 1000px) {
   .text-effect {
     font-size: 55px;
   }
+
+  .header-wrapper {
+    background: url('./assets/main-hero-image.png') no-repeat center top;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 }
 @media only screen and (max-width: 479px) {
   .text-effect {
     font-size: 40px;
   }
-}
-@media only screen and (max-width: 359px) {
-  .text-effect {
-    font-size: 30px;
+
+  .header-wrapper {
+    background: url('./assets/main-hero-image.png') no-repeat center top;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-} */
+
+
+}
+@media only screen and (max-width: 375px) {
+
+  .header-wrapper {
+    background: url('./assets/main-hero-image.png') no-repeat center top;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+} 
