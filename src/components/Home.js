@@ -2,8 +2,13 @@ import React from 'react';
 import SearchBar from './SearchBar'
 import GifContainer from './GifContainer'
 import InfoContainer from './InfoContainer'
+import { connect } from 'react-redux'
+
 
 class Home extends React.Component {
+
+
+
     render() {
         return(
             <div>
@@ -14,7 +19,7 @@ class Home extends React.Component {
                     <section>
                         <SearchBar />
                     </section>
-                    <section>
+                    <section id="thisOne">
                         <GifContainer />
                     </section>
                 </main> 
@@ -23,4 +28,11 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+function mapStateToProps(state) {
+    // console.log('test from gif container to see if state copied gif', state)
+    return {
+        gifs: state.gifs,
+    }
+}
+
+export default connect(mapStateToProps)(Home)

@@ -15,76 +15,61 @@ toast.configure()
 
 class App extends React.Component {
 
-  state={
-    something: false,
-  }
+
 
   componentDidMount() {
     const user = localStorage.getItem('user')
     const favorites = JSON.parse(localStorage.getItem('storedGifs'))
     if(user) {
       this.props.setCurrentUser(user);
-      // JQuery event for moving the elemengts in teh header on mouse movement
-      $(document).on("mousemove", (event) => {
-        var $mouseX = event.pageX,
-            $mouseY = event.pageY;
-          $('#hand').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#thumbsup').css("margin-left", -($mouseX * 0.02) + 'px');
-          $('#coffee').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#sunglass').css("margin-left", -($mouseX * 0.02) + 'px');
-
-          $('#bulb').css("margin-top", - ($mouseY * 0.01) + 'px');
-          $('#robot').css("margin-top", -($mouseX * 0.02) + 'px');
-          $('#music').css("margin-top", - ($mouseY * 0.01) + 'px');
-          $('#squigley').css("margin-top", -($mouseX * 0.02) + 'px');
-
-          $('#waves').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#cat').css("margin-left", -($mouseX * 0.02) + 'px');
-          $('#paintbrush').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#mouse').css("margin-left", -($mouseX * 0.02) + 'px');
-
-          $('#hearts').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#rain').css("margin-left", -($mouseX * 0.02) + 'px');
-          $('#quotes').css("margin-left", - ($mouseY * 0.01) + 'px');
-          $('#lightning').css("margin-left", -($mouseX * 0.02) + 'px');
-      });
+      
 
       if (favorites) {
         this.props.setUsersFavorites(favorites)
       }
     } 
+    // JQuery event for moving the elements in the header on mouse movement
+    $(document).on("mousemove", (event) => {
+      var $mouseX = event.pageX,
+          $mouseY = event.pageY;
+        $('#lady').css("margin-left", - ($mouseY * 0.01) + 'px');
+        $('#cloud').css("margin-left", -($mouseX * 0.02) + 'px');
+        $('#icecream').css("margin-left", - ($mouseY * 0.01) + 'px');
+        $('#like').css("margin-left", -($mouseX * 0.02) + 'px');
+
+        $('#shapes').css("margin-top", - ($mouseY * 0.01) + 'px');
+        $('#ghost').css("margin-top", -($mouseX * 0.02) + 'px');
+        $('#cake').css("margin-top", - ($mouseY * 0.01) + 'px');
+        $('#kitty').css("margin-top", -($mouseX * 0.02) + 'px');
+
+        $('#fries').css("margin-left", - ($mouseY * 0.01) + 'px');
+        $('#laptop').css("margin-right", -($mouseX * 0.02) + 'px');
+        $('#poison').css("margin-left", - ($mouseY * 0.01) + 'px');
+        $('#casette').css("margin-left", -($mouseX * 0.02) + 'px');
+
+    });
   }
 
-  doSomething = (event) => {
-    this.setState({something: !this.state.something});
-    
-  }
 
   render() {
-    console.log('render from app', this.state)
+    // console.log('render from app', this.state)
     const headerID = this.props.searchBarClicked ? 'header-move' : 'header-idle';
       return (
       <div className="App">
-        <header className="header-wrapper"
-        >
-          <div id="coffee"
-            // onMouseEnter={(event) => this.doSomething(event)}
-          ></div>
-          <div id="bulb"></div>
-          <div id="hand"></div>
-          <div id="cat"></div>
-          <div id="thumbsup"></div>
-          <div id="robot"></div>
-          <div id="music"></div>
-          <div id="sunglass"></div>
-          <div id="squigley"></div>
-          <div id="waves"></div>
-          <div id="paintbrush"></div>
-          <div id="mouse"></div>
-          <div id="hearts"></div>
-          <div id="rain"></div>
-          <div id="quotes"></div>
-          <div id="lightning"></div>
+        <header className="header-wrapper">
+          
+          <div id="lady"></div>
+          <div id="cloud"></div>
+          <div id="icecream"></div>
+          <div id="like"></div>
+          <div id="shapes"></div>
+          <div id="ghost"></div>
+          <div id="fries"></div>
+          <div id="laptop"></div>
+          <div id="kitty"></div>
+          <div id="poison"></div>
+          <div id="casette"></div>
+          <div id="cake"></div>
           <div>
             <h1 id={headerID}>
                 <span className="g">G</span>

@@ -30,12 +30,14 @@ class SignIn extends React.Component {
     render() {
         return (
             <div id="sign-in-container">
-                {/* <h2>Sign Up</h2> */}
-                <h3>Create a username to start saving gifs to favorites.</h3>
+                <video autoPlay loop muted >
+                <source src={require('../assets/hello-there.mp4')} type="video/mp4"></source>
+                </video>
+                {/* <h3>Create a username to start saving gifs to favorites.</h3> */}
                 <div id="sign-in-form">
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Field>
-                            <label>Username</label>
+                            <label>Select a username</label>
                             <Input
                                 name="username"
                                 placeholder="Create a username"

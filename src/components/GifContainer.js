@@ -10,6 +10,7 @@ const { helix } = transitions;
 class GifContainer extends React.Component {
     
     renderGifs = () => {
+
         if (this.props.gifs) {
             return this.props.gifs.map(gif => {
                 let found = this.props.favorites.find(faveGif => faveGif.id === gif.id)
@@ -18,20 +19,26 @@ class GifContainer extends React.Component {
                      return (
                     <GifItem {...gif} key={gif.id} isInFave={true} copiedGif={copiedGif}/>
                     )
+
                 } else {
                     return (
                         <GifItem {...gif} key={gif.id} isInFave={false} copiedGif={copiedGif}/>
                     )
                 }   
+                
             })
+
         }
-        
+
     }
 
+
+
     render() {
+       
         return(
-            <div>
-                <div id="gif-container-wrapper">
+            <div id="gif-container-wrapper">
+                <div >
                     <StackGrid 
                         columnWidth={300} 
                         monitorImagesLoaded={true}
