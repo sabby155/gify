@@ -1,7 +1,8 @@
 
 
 .App {
-  margin: 0 auto;
+  background-color: aliceblue;
+  margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -30,13 +31,16 @@
 }
 
 
-h1, h2, h3, h4, h5 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  margin: 0;
-  text-align: center;
-  z-index: 1000;
+h2 {
+  font-family: 'whiskey-bite-duo';
+  font-size: .6em;
+}
+
+
+p {
+  font-family: "Andale Mono",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
 }
 
 img, embed, object, video {
@@ -46,33 +50,6 @@ img, embed, object, video {
 
 header, nav, footer, section, div {
   box-sizing: border-box;
-}
-
-/* Nav Styles */
-div.ui.pointing.secondary.menu {
-  border:none;
-}
-
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-}
-
-a.item {
-  font-family: 'whiskey-bite-regular';
-  font-size: 1em;;
-}
-
-
-
-
-#header-idle {
-  font-size: 10vmax;
-  color: #f2cee6;
-  text-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff;
 }
 
 .header-wrapper {
@@ -88,6 +65,92 @@ a.item {
   font-size: 10vmax;
 
 }
+
+h1 {
+  font-family: "Andale Mono",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+  font-size: 10vmax;
+  letter-spacing: -10px;
+  font-size: 10vmax;
+  color: black;
+  box-shadow: inset 0 -0.4em 0 rgba(98,54,255,.35);
+
+}
+
+
+#header-move span {
+  position: relative;
+  /* color: #f2cee6;
+  text-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff; */
+  animation: move 1.85s infinite;
+}
+
+ #header-move span:nth-child(5) {
+  animation-delay: .3s;
+}
+
+#header-move span:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+#header-move span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+#header-move span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+#header-move span:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+@keyframes move {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -20px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* ---------Nav Styles ----------*/
+div.ui.pointing.secondary.menu {
+  border-top:2px solid #b6e1e2;
+  border-bottom: none;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+a.item {
+  font-family: "Andale Mono",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-size: em;
+  display: inline-block;
+
+}
+
+
+.ui.secondary.pointing.menu .active.item {
+  border-color: #6236FF;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+  border-color: #6236FF;
+}
+
+
 
 
 /* ----------------header icon styles ------------------ */
@@ -123,7 +186,7 @@ a.item {
   height: 320px;
   transform: scale(.4) rotate(10deg);
   left: 50%;
-  top: -8%;
+  top: -9%;
 }
 
 #shapes {
@@ -236,62 +299,66 @@ a.item {
 
 
 
-#header-move {
-  font-size: 10vmax;
-}
-
-#header-move span {
-  position: relative;
-  color: #f2cee6;
-  text-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff;
-  animation: move 1.85s infinite;
-}
-
- #header-move span:nth-child(5) {
-  animation-delay: .3s;
-}
-
-#header-move span:nth-child(4) {
-  animation-delay: 0.15s;
-}
-
-#header-move span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-#header-move span:nth-child(2) {
-  animation-delay: 0.25s;
-}
-
-#header-move span:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-@keyframes move {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: -20px;
-  }
-  100% {
-    top: 0;
-  }
-}
-
 /* --- Gif Information Container Styles ----*/
 #gif-info-container {
-  margin: 50px 0;
+  margin: 50px 20px;
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #gif-info-blurb {
-  padding: 5%;
-  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  z-index: 2;
+   /* animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
+
+
+#gif-info-blurb p {
+  width: 50%;
+  font-size: .9em;
+  margin: 2.5em 2%;
+  /* border: 1px solid #b6e1e2;
+  padding: 3%; */
+}
+
+#gif-info-blurb blockquote {
+  width: 50%;
+  border-left: 6px solid #b6e1e2;
+  display: inline-block;
+  font-family: 'whiskey-bite-duo';
+  font-size: .6em;
+  margin: 2.5em 2%;
+  padding: 1em 2em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+
+#gif-info-blurb blockquote:before {
+  color: #b6e1e2;
+  content: open-quote;
+  font-size: 4em;
+  vertical-align: -0.4em;
+}
+
+
+
+#video {
+  position: absolute;
+  display: inline;
+  mix-blend-mode: multiply;
+  background-blend-mode: multiply;
+  right: -1%;
+  bottom: 30%;
+  animation: rotate-in-2-bl-ccw 1.2s 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+
 
 @keyframes slide-in-left {
   0% {
@@ -308,79 +375,134 @@ a.item {
 
 
 #hand-phone-splash-photo {
+  mix-blend-mode: multiply;
   position: absolute;
   background-image: url('./assets/hand-phone-splash.png');
   width: 500px;
   height: 612px;
-  transform: scale(.9);
-  padding: 1%;
-  left: 45%;
-  bottom: -15%;
-  animation: rotate-in-2-bl-ccw 1s 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
+  /* padding: 1%; */
+  right: -1%;
+  bottom: -2%;
+  transform: scale(.8);
+  /* animation: rotate-in-2-bl-ccw 1s 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+  z-index: 1;
 }
 
-@keyframes rotate-in-2-bl-ccw {
+#phone-circle {
+  position: absolute;
+  background-image: url('./assets/phone-circle.png');
+  width: 268px;
+  height: 268px;
+  right: 10%;
+  bottom: 17%;
+  animation: slide-in-right 1.2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1s both;
+}
+
+@keyframes slide-in-right {
   0% {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%;
-    opacity: 0;
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-    -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }
 
-
-
-blockquote {
-  border-left: 6px solid #abe9ff;
-  /* background: #f9f9f9; */
-  display: inline-block;
-  font-family: 'whiskey-bite-duo';
-  width: 50%;
-  font-size: .55em;
-  margin: 2.5em 2%;
-  padding: 3em 2em;
-  quotes: "\201C""\201D""\2018""\2019";
-  
-}
-
-blockquote:before {
-  color: #abe9ff;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  vertical-align: -0.4em;
-}
-
-#birthday-box {
+#lightning {
   position: absolute;
-  width: 320px;
-  height: 90px;
-  background-color: #ABE9FF;
-  top: 45%;
-  left: 15%;
+  background-image: url('./assets/lightning.png');
+  width: 63px;
+  height: 78px;
+  right: 7%;
+  bottom: 40%;
+  z-index: 5;
+  opacity: .8;
+  animation: rotate-90-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+
+@keyframes rotate-90-cw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+            transform-origin: bottom;
+  }
+  50% {
+    -webkit-transform: translateY(2%) rotate(15deg);
+            transform: translateY(2%) rotate(15deg);
+            transform-origin: bottom;
+
+
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    transform-origin: bottom;
+
+  }
 }
 
 
 
-/* #phone {
-  position: absolute;
-  background: url("https://giphy.com/gifs/KbksHBmnThqA8E7onV");
-  width: 870px;
-  height: 422px;
-  transform: scale(.5) rotate(-10deg);
-  top: 6%;
-  left: 7%;
-} */
+/* -------- Random Gif Generator Styles --------*/
 
+#random-gen-wrapper {
+  margin: 50px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#random-gen-text-content {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#random-gen-images-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#untitled-jpg {
+  mix-blend-mode: multiply;
+
+  background-image: url('./assets/gif-image-splash.png');
+  width: 500px;
+  height: 418px;
+  transform: scale(.9);
+  z-index: 2;
+}
+
+
+#random-gen-text-content p {
+  width: 60%;
+  font-size: .9em;
+  /* margin: 2.5em 2%; */
+}
+
+#random-gen-text-content h2 {
+   width:50%;
+  line-height: 2.5em;
+}
+
+#random-gen-circle {
+  position: absolute;
+  background-image: url('./assets/random-gen-circle.png');
+  width: 430px;
+  height: 430px;
+  left: 10%;
+  z-index: 1;
+  /* animation: slide-in-right 1.2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1s both; */
+}
 
 
 
@@ -650,6 +772,7 @@ blockquote:before {
 /* ------ Sign In ------ */
 
 #sign-in-container {
+  mix-blend-mode: multiply;
   width: 100%;
   padding: 10%;
   margin: 0 auto;
@@ -668,15 +791,60 @@ blockquote:before {
   position: absolute;
 }
 
+#sign-in-form label {
+  font-family: 'whiskey-bite-duo';
+  font-size: .7em;
+  padding: 5% 0;
+}
+
+#sign-in-searchbar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",;
+  /* text-transform: uppercase; */
+  padding: 1.5%;
+  width: 100%;
+  text-align: center;
+  border: none;
+  color: #D8A7CD;
+  caret-color: #FFA685;
+  background-color: white;
+  z-index: 100;
+  border: 2px solid black;
+  border-radius: 35px;
+}
+
+#sign-in-video {
+  mix-blend-mode: multiply;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#sign-in-enter {
+  background-color: #f2cee6;
+  box-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 6px 6px #2dc7ff;
+  z-index: 100;
+  border-radius: 30px;
+}
+
+#sign-in-enter.active {
+  background-color: #f2cee6;
+  transform: translateY(3px);
+  box-shadow: -2px 0 #0d1b1e, 0 -2px #0d1b1e, 2px 0 #0d1b1e, 0 2px #0d1b1e, 2px 2px #0d1b1e, -2px -2px #0d1b1e, -2px 2px #0d1b1e, 2px -2px #0d1b1e, 0 0 #2dc7ff;
+  z-index: 100;
+}
+
+
+
+
 
 /* ------ Search Styles ------ */
 
  #search-container {
-  /* width: 100%; */
-  background: url('./assets/main-hero-image.png') no-repeat center top;
+  width: 100%;
+  mix-blend-mode: multiply;
+  background: url('./assets/grid-background.png') repeat center top;
   background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
   height: 15vh;
   padding: 10%;
   margin: 0 auto;
@@ -687,26 +855,15 @@ blockquote:before {
   justify-content: center; 
 }
 
-/* #chat-image {
-  background: url('./assets/chat-image.png');
-  width: 247px;
-  height: 117px;
-  left: 25%;
-  bottom: -8%;
-  opacity: .8;
-  mix-blend-mode: multiply;
-} */
 
-#search-header {
-  /* position: absolute; */
+/* #search-header {
   font-family: 'whiskey-bite-regular';
   font-size: 1.2em;
   bottom: 6%;
-}
+} */
 
 
 #search-form {
-  /* position: relative; */
   padding: 2%;
   /* width: 80%; */
   border: 2px solid black;
@@ -729,7 +886,7 @@ blockquote:before {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",;
   /* text-transform: uppercase; */
-  padding: 1.5%;
+  padding: 1%;
   width: 100%;
   text-align: center;
   border: none;
@@ -761,10 +918,13 @@ blockquote:before {
 /* ------ Favorites ----- */
 
 .favorites-wrapper {
+  background-color: aliceblue;
   padding: 5%;
+  margin: 50px 0;
 }
 
 .favorites-wrapper h2 {
+  font-family: 'whiskey-bite-outline';
   margin-bottom: 2%;
 }
 
@@ -773,7 +933,10 @@ blockquote:before {
 /* ------ Gif Container Styles ----- */
 
 #gif-container-wrapper {
-  margin-top: 50px;
+  mix-blend-mode: multiply;
+  background: url('./assets/grid-background.png') repeat;
+  background-size: contain;
+  padding-top: 50px;
 }
 
 

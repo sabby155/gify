@@ -30,8 +30,8 @@ class SignIn extends React.Component {
     render() {
         return (
             <div id="sign-in-container">
-                <video autoPlay loop muted >
-                <source src={require('../assets/hello-there.mp4')} type="video/mp4"></source>
+                <video autoPlay loop muted id="sign-in-video">
+                <source src={require('../assets/hello-there-2.mp4')} type="video/mp4"></source>
                 </video>
                 {/* <h3>Create a username to start saving gifs to favorites.</h3> */}
                 <div id="sign-in-form">
@@ -39,15 +39,19 @@ class SignIn extends React.Component {
                         <Form.Field>
                             <label>Select a username</label>
                             <Input
+                                id="sign-in-searchbar"
                                 name="username"
-                                placeholder="Create a username"
+                                // placeholder="Create a username"
                                 value={this.state.username}
                                 onChange={this.handleChange}
                             />
                         </Form.Field>
-                        <Button type="submit"
-                                onClick={this.notify}
-                        >Sign In</Button>
+                        <Button 
+                            id="sign-in-enter"
+                            type="submit"
+                            onClick={this.notify}>
+                                Enter
+                        </Button>
                     </Form>
                 </div>
             </div>

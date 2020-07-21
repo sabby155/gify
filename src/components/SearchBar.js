@@ -28,8 +28,33 @@ class SearchBar extends React.Component {
         const gifSection = document.querySelector('#search-container');
 
         const term = this.props.term;
-        // const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw&q=${term}&limit=25&offset=0&rating=G&lang=en`;
+
         const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?api_key=eE8CyMnvnv9H4aI0UdS3o8QAaoG1GCOT&q=${term}&limit=30&offset=0&rating=G&lang=en`;
+        // const giphyApiUrl = `https://api.giphy.com/v1/stickers/trending?api_key=eE8CyMnvnv9H4aI0UdS3o8QAaoG1GCOT&limit=20&offset=0&rating=G&lang=en`
+        //  const giphyApiUrl = `https://api.giphy.com/v1/trending/searches?api_key=eE8CyMnvnv9H4aI0UdS3o8QAaoG1GCOT`
+        // const giphyApiUrl = `https://api.giphy.com/v1/gifs/random?api_key=eE8CyMnvnv9H4aI0UdS3o8QAaoG1GCOT`
+
+    //     fetch(giphyApiUrl, {
+    //         method: 'GET',
+    //         header: {
+    //             'Content-Type': 'application/json',
+    //              'Accepts': 'application/json'
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log('this is the data im getting back',data.data)
+    //         // this.props.saveGifs(data.data);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //         console.log('Giphy API Error');
+    //     });
+    //     if (this.props.gifs) {
+    //         gifSection.scrollIntoView({behavior: 'smooth', block: 'start' })
+    //     }
+
+    // }
 
         fetch(giphyApiUrl, {
             method: 'GET',
@@ -40,7 +65,7 @@ class SearchBar extends React.Component {
         })
         .then(res => res.json())
         .then(data => {
-            // console.log('is data working!? heres how much im getting back', data.data.length)
+            console.log('this is the data im getting back',data)
             this.props.saveGifs(data.data);
         })
         .catch(error => {
@@ -57,7 +82,7 @@ class SearchBar extends React.Component {
         // console.log('from search', this.state.searchTerm)
         return(
             <div>
-                <h2 id="search-header">Search Giphy</h2>
+                {/* <h2 id="search-header">Search Giphy</h2> */}
                 <div id="search-container">
                     <div id="chat-image"></div>
                     <ul id="blah-text">

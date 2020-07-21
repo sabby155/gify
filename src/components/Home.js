@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar'
 import GifContainer from './GifContainer'
 import InfoContainer from './InfoContainer'
+import RandomGeneratorContainer from './RandomGeneratorContainer'
 import { connect } from 'react-redux'
 
 
@@ -15,6 +16,9 @@ class Home extends React.Component {
                 <main>
                     <section>
                         <InfoContainer />
+                    </section>
+                    <section>
+                        <RandomGeneratorContainer />
                     </section>
                     <section>
                         <SearchBar />

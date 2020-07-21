@@ -19,14 +19,14 @@ class FavoritesContainer extends React.Component {
             return faveGifs.map((gif) => {
                 return <GifItem {...gif} key={gif.id} isInFave={true} copiedGif={copiedGif}/>
             })
-        }
+        } 
     }
 
 
     render() {
         return (
             <div className="favorites-wrapper">
-                <h2>My Favorite Gifs</h2>
+                <h2>My Top Gifs</h2>
                 <Container>
                     <StackGrid 
                         columnWidth={225} 
