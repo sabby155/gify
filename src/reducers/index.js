@@ -5,6 +5,7 @@ const defaultState = {
     favorites: [],
     copiedGif: [],
     searchBarClicked: false,
+    randomGif: null
 }
 
 const reducer = (state=defaultState, action) => {
@@ -20,6 +21,9 @@ const reducer = (state=defaultState, action) => {
 
         case "SAVE_GIFS": 
             return {...state, gifs: action.payload} 
+
+        case "SAVE_RANDOM_GIF": 
+            return {...state, randomGif: action.payload} 
 
         case "SET_COPIED_LINK_GIF": 
             return {... state, copiedGif: action.payload}
